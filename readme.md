@@ -1,28 +1,32 @@
-## micro animations with lottie
+# Micro animations with lottie
 
-demo
+![lottie:3.4.0](https://img.shields.io/badge/lottie-3.4.0-green)
+![bodymovin:5.6.5](https://img.shields.io/badge/bodymovin-5.6.5-blue)
+![issues:3 open](https://img.shields.io/badge/issues-3%20open-black)
 
-menu icon animation
+## demo
 
-![menu-close-menu-60frames](https://user-images.githubusercontent.com/39020723/78463691-9dca6a00-76e8-11ea-8490-82fe1493b545.gif =250x)
+menu icon animation                                 | search icon animation
+:--------------------------------------------------:|:------------------------------------------------------:
+<img src="gifs/menu-close-menu-60frames.gif" width="200">|<img src="gifs/search-close-search-60frames.gif" width="200">
 
-search icon animation
+## setup and installation
 
-![search-close-search-60frames](https://user-images.githubusercontent.com/39020723/78463692-a0c55a80-76e8-11ea-9237-776a7c6bd7c0.gif =250x)
-
-## for android
+### For Android
 
 to implement the animations into your code, first start by adding lottie in your dependancies like this;
 
+```
 dependencies {
- 
- ...
+...
  //Lottie Library
 implementation ‘com.airbnb.android:lottie:$lottieVersion’
- ...
-}
+...
+} 
+```
 at the time of making this mini project the lottie version is 3.4.0
-(you can read more here: https://github.com/airbnb/lottie-android and scroll to the bottom)
+
+*you can read more here: https://github.com/airbnb/lottie-android and scroll to the bottom*
 
 now sync your gradle files.
 
@@ -32,20 +36,22 @@ the code below will make the animation **NOT** auto-play
  android:id=”@+id/lav_myanim” <!-- give the animation id -->
  app:lottie_autoPlay=”false” <!-- stating that it should NOT autoplay -->
  app:lottie_fileName=”{name-of-json}.json <!-- this is the name of the animation.json you want, without the curly braces -->
- app:lottie_loop=”false” /> ```
+ app:lottie_loop=”false” /> 
+ ```
 
  in your java class import lottie animation view
 
- ``` import com.airbnb.lottie.LottieAnimationView; ```
+ ```
+ import com.airbnb.lottie.LottieAnimationView; 
+ ```
 
 then declare your variable
 
-
-``` lottieAnimationView myanim; ```
-
-then define your function and call the play animation methods
+``` lottieAnimationView myanim; 
 ```
-int action=0;
+then define your function and call the play animation methods
+
+```	int action=0;
 	myanim = findViewById(R.id.lav_myanim);
         myanim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,12 +59,11 @@ int action=0;
                 changeState();
             }
         }); 
-        ```
+```
+ and this is the changeState function
 
-
-      and this it the changeState function
-
-  ```    private void changeState() {
+  ```    
+  private void changeState() {
         if (action == 0) {
         //the animation from start to half, which is the completion of the second state. i.e the arrival of the animation at the close button
         //Here, calculation is done on the basis of start and stop frame divided by the total number of frames
@@ -83,10 +88,11 @@ int action=0;
         }
     }
 ```
-## for web
+### For Web
 
 With basic vanilla Javascript.
-First start by downloading lottie.js. You can do so directly via this link  https://www.dropbox.com/s/fvl9s396m4vmcpk/lottie.js?dl=0 or
+First start by downloading lottie.js. You can do so directly via this link  https://www.dropbox.com/s/fvl9s396m4vmcpk/lottie.js?dl=0 
+or
 you can go to the lottie web github page and get the lottie.js file from the build/player/ folder for the latest build.
 Here's the link https://github.com/airbnb/lottie-web.
 
@@ -115,9 +121,9 @@ now add the following script
 }
 ```
 
-documentation: https://airbnb.io/lottie/#/web
+*documentation: https://airbnb.io/lottie/#/web*
 
-# react
+### React Native
 
 first start by importing the lottie web package with 
 
@@ -126,7 +132,8 @@ first start by importing the lottie web package with
 then import the lottie module and the animation.json file
 
 ```import lottie from 'lottie-web';
-import animationData from '../plugins/lottie/name-of-animation.json';```
+import animationData from '../plugins/lottie/name-of-animation.json';
+```
 
 call the loadAnimation to start the animation
 ```
@@ -158,4 +165,24 @@ animObj.play();
     );
   }
 ```
+## contribution
+
+You can contribute to this project by reaching me via dm or shooting me an [email](mailto:leonkipkoech00@gmail.com).<br>
+Here's the [contribution](contribution.md) guide.
   
+## license
+
+This project is under the [mit license](https://github.com/leonkoech/Micro-Animations/license.md).
+
+## challanges
+
+This was a fast mini-project I did when I took a break from some online classes. So there are installation guides that I have not included.
+Also, some of the ones I've included lack the stop when animation is halfway in terms of frame count. and continue to the end when clicked again.
+
+- [x] java/android onclick stop animation and continue when clicked again
+- [x] react native onclick start animation
+- [x] react native button to stop animation
+- [x] vanilla javascript onclick start animation
+- [ ] react native onclick stop animation and continue when clicked again
+- [ ] vanilla javascript onclick stop animation and continue when clicked again
+- [ ] ios/mac on click to start or stop animation
