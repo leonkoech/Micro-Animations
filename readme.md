@@ -32,7 +32,8 @@ now sync your gradle files.
 
 the code below will make the animation **NOT** auto-play
 
-``` <com.airbnb.lottie.LottieAnimationView
+``` 
+<com.airbnb.lottie.LottieAnimationView
  android:id=”@+id/lav_myanim” <!-- give the animation id -->
  app:lottie_autoPlay=”false” <!-- stating that it should NOT autoplay -->
  app:lottie_fileName=”{name-of-json}.json <!-- this is the name of the animation.json you want, without the curly braces -->
@@ -47,11 +48,13 @@ the code below will make the animation **NOT** auto-play
 
 then declare your variable
 
-``` lottieAnimationView myanim; 
+``` 
+lottieAnimationView myanim; 
 ```
 then define your function and call the play animation methods
 
-```	int action=0;
+```	
+int action=0;
 	myanim = findViewById(R.id.lav_myanim);
         myanim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,14 +101,19 @@ Here's the link https://github.com/airbnb/lottie-web.
 
 secondly, Include the scripton your website
 
-``` <script src='../assets/js/plugins/lottie.js'></script> <!--  the location of your lottie.js in your project--> ```
+``` 
+<script src='../assets/js/plugins/lottie.js'></script> <!--  the location of your lottie.js in your project--> 
+```
 
 next, create a div and give your div an id
 
-``` <div onclick="animate();" id="lot_myanim"></div> ```
+``` 
+<div onclick="animate();" id="lot_myanim"></div>
+```
 
 now add the following script
-```function animate(){
+```
+function animate(){
 	var animData = {
 	        wrapper: document.getElementById('lot_myanim'),
 	        animType: 'html',
@@ -127,11 +135,14 @@ now add the following script
 
 first start by importing the lottie web package with 
 
-```	npm install --save lottie-web ```
+```	
+npm install --save lottie-web
+```
 
 then import the lottie module and the animation.json file
 
-```import lottie from 'lottie-web';
+```
+import lottie from 'lottie-web';
 import animationData from '../plugins/lottie/name-of-animation.json';
 ```
 
